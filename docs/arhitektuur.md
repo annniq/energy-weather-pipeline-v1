@@ -31,12 +31,12 @@ flowchart LR
     weather_raw --> stg_weather[(stg_weather)]
     
     %% 3. Transformatsioon ja kvaliteedikontroll
-    stg_prices --> transform[transform ]
+    stg_prices --> transform[transform]
     stg_weather --> transform
     transform --> quality[data quality tests]
     
     %% 4. Mart ja Väljundid
-    quality --> mart[data mart (dim & fct)]
+    quality --> mart[mart dim & fct]
     mart --> dashboard[dashboard]
 ```
 
