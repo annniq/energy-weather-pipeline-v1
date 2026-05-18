@@ -22,13 +22,14 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 
 ```mermaid
 flowchart LR
-    api_prices[Elering NPS API] --> ingest[raw]
-    api_weather[Open-Meteo API] --> ingest[raw]
-    ingest --> staging[staging]
-    staging --> transform[Transformatsioon]
+    api_prices[Elering NPS API] --> ingest[prices_raw]
+    api_weather[Open-Meteo API] --> ingest[weather_raw]
+    ingest[prices_raw] --> staging[staging (processed)]
+    ingest[weather_raw] --> staging[staging (processed)]
+    staging --> transform[transformatsioon]
     transform --> mart[(mart)]
-    mart --> dashboard[Näidikulaud]
-    mart --> quality[Andmekvaliteedi testid]
+    mart --> dashboard[näidikulaud]
+    mart --> quality[andmekvaliteedi testid]
 
 
 ```
@@ -39,8 +40,9 @@ flowchart LR
 
 | Kiht | Roll |
 |------|------|
-| `staging` | Hoiab allika andmeid töötlemata kujul. |
-| `mart` | Hoiab transformeeritud ja ärilogikat sisaldavaid tabeleid. |
+| `staging` | Tabelid (raw) ehk API toorandmed JSON kujul ja nende puhastatud CSV-d  |
+| `intermediate` | Vaade | Skooriarvutus — ei salvestata, arvutatakse iga päringu korral |
+| `marts` | Tabel | Äriloogika kokkuvõtted, mida Superset loeb |
 
 ## Tööjaotus
 
