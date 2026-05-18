@@ -24,7 +24,7 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 flowchart LR
     source[Andmeallikas Elering NPS] --> ingest[Sissevõtt]
     source[Andmeallikas Open-Meteo] --> ingest[Sissevõtt]
-    ingest --> staging[(staging)
+    ingest --> staging[(staging)] 
     staging --> transform[Transformatsioon]
     transform --> mart[(mart)]
     mart --> dashboard[Näidikulaud]
