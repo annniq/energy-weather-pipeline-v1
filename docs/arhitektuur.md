@@ -23,22 +23,22 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 ```mermaid
 flowchart LR
     %% 1. Allikad ja andmete tõmbamine (Extract & Save to CSV)
-    api_prices[Elering NPS API] --> extract_p[Extract Skript] --> prices_raw[processed/prices.csv]
-    api_weather[Open-Meteo API] --> extract_w[Extract Skript] --> weather_raw[processed/weather.csv]
+    api_prices[Elering NPS API] --> ingest_p[py ingest] --> prices_raw[processed/prices.csv]
+    api_weather[Open-Meteo API] --> ingest_w[py ingest] --> weather_raw[processed/weather.csv]
     
     %% 2. Sissevõtt andmebaasi (load_to_staging)
-    prices_raw --> load_p[load_to_staging] --> stg_prices[(stg_prices)]
-    weather_raw --> load_w[load_to_staging] --> stg_weather[(stg_weather)]
+    prices_raw -->  stg_prices[(stg_prices)]
+    weather_raw --> stg_weather[(stg_weather)]
     
     %% 3. Transformatsioon ja kvaliteedikontroll
-    stg_prices --> transform[transformatsioon / int_ vaated]
+    stg_prices --> transform[transform ]
     stg_weather --> transform
     
-    transform --> quality{Andmekvaliteedi testid}
+    transform --> quality{data quality tests}
     
     %% 4. Mart ja Väljundid
-    quality -->|OK| mart[(Data Mart / dim & fct)]
-    mart --> dashboard[Näidikulaud / v_report]
+    quality -->|OK| mart[(data mart / dim & fct)]
+    mart --> dashboard[dashboard / v_report]
 ```
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
