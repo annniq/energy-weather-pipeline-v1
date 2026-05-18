@@ -39,6 +39,7 @@ flowchart LR
     %% 4. Mart ja Väljundid
     quality -->|OK| mart[(Data Mart / dim & fct)]
     mart --> dashboard[Näidikulaud / v_report]
+```
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
 
