@@ -22,7 +22,7 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 
 ```mermaid
 flowchart LR
-    source_elering[Elering NPS API] --> ingest [Sissevõtt / Ingestion]
+    source_elering[Elering NPS API] --> ingest[Sissevõtt / Ingestion]
     source_meteo[Open-Meteo API] --> ingest[Sissevõtt / Ingestion]
     ingest --> staging[(staging)] 
     staging --> transform[Transformatsioon]
