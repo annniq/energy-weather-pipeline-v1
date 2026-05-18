@@ -33,12 +33,11 @@ flowchart LR
     %% 3. Transformatsioon ja kvaliteedikontroll
     stg_prices --> transform[transform ]
     stg_weather --> transform
-    
-    transform --> quality{data quality tests}
+    transform --> quality[data quality tests]
     
     %% 4. Mart ja Väljundid
-    quality -->|OK| mart[(data mart / dim & fct)]
-    mart --> dashboard[dashboard / v_report]
+    quality --> mart[data mart (dim & fct)]
+    mart --> dashboard[dashboard]
 ```
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
