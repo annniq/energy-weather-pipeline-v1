@@ -22,26 +22,23 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 
 ```mermaid
 flowchart LR
-    %% Allikad -> Toored tabelid (Extract & Load)
-    api_prices[Elering NPS API] --> extract_prices[Extract / Load]
-    api_weather[Open-Meteo API] --> extract_weather[Extract / Load]
+    %% 1. Allikad (Failid kettal)
+    csv_prices[prices.csv] --> load[load_to_staging]
+    csv_weather[weather.csv] --> load
+
+    %% 2. Staging kiht (Pronks)
+    load --> stg_prices[(stg_prices)]
+    load --> stg_weather[(stg_weather)]
+
+    %% 3. Vahekiht & Kvaliteet (Hõbe)
+    stg_prices --> transform[Transformatsioon / int_ vaated]
+    stg_weather --> transform
     
-    %% Toored tabelid (Raw layer)
-    extract_prices --> prices_raw[(prices_raw)]
-    extract_weather --> weather_raw[(weather_raw)]
+    transform --> quality{Andmetestid}
     
-    %% Raw -> Staging
-    prices_raw --> staging_prices[stg_prices]
-    weather_raw --> staging_weather[stg_weather]
-    
-    %% Staging -> Transformatsioon (Andmete ühitamine)
-    staging_prices --> transform[Transformatsioon / dbt]
-    staging_weather --> transform
-    
-    %% Transform -> Mart -> Väljundid
-    transform --> mart[(Data Mart)]
-    mart --> dashboard[Näidikulaud]
-    mart --> quality[Andmekvaliteedi testid]
+    %% 4. Lõppkiht (Kuld)
+    quality -->|OK| mart[(Data Mart / dim & fct)]
+    mart --> dashboard[Näidikulaud / v_report]
 ```
 
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
