@@ -4,7 +4,8 @@
 
 ## Äriküsimus
 
-[Kirjuta ühe-kahe lausega oma äriküsimus täpselt. Näiteks: "Millistes kauplustes ja mis kellaaegadel on müügitõhusus (käive külastaja kohta) kõrgeim?"]
+Kuidas mõjutavad ilmastikutegurid — temperatuur, tuulekiirus ja päikesekiirgus — Eesti, Läti, Leedu, Soome elektri börsihinda? 
+Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate elektrihindadega ning millistel ilmastikuoludel tekivad kõrgemad hinnad?
 
 ## Mõõdikud
 
