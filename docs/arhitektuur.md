@@ -15,8 +15,8 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
 |---------|------|--------------|------|
-| [Nimi] | [API / CSV / DB] | Jah, [iga X tundi / päeva] | [Milleks kasutatakse?] |
-| [Nimi] | [seed / dim-tabel] | Ei, staatiline | [Milleks kasutatakse?] |
+| [Elering NPS API] | [API] | Jah, [iga päev 15min intervalliga] | [Kasutatakse elektrihindade eilsete andmete pärimiseks |
+| [Open-Meteo API] | [API] |Jah, [iga päev 15min intervalliga] | [Kasutatakse ilmastiku (tuul, temp, pilvisus, kiirgus) eilsete andmete pärimiseks.] |
 
 ## Andmevoog
 
