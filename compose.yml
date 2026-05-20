@@ -60,7 +60,7 @@ services:
     volumes:
       - airflow-db-volume:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "${AIRFLOW_USER:-airflow}"]
+      test: ["CMD", "pg_isready", "-U", "${AIRFLOW_USER:-airflow}", "-d", "${AIRFLOW_DB:-airflow}"]
       interval: 10s
       retries: 5
       start_period: 5s
@@ -81,7 +81,7 @@ services:
       - analytics-db-volume:/var/lib/postgresql
       - ./sql:/docker-entrypoint-initdb.d
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER:-energy}"]
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER:-energy}", "-d", "${POSTGRES_DB:-energy_weather}"]
       interval: 10s
       retries: 5
       start_period: 5s
