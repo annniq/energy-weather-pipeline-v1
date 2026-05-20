@@ -22,24 +22,15 @@ Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate
 
 ```mermaid
 flowchart LR
-    %% 1. Allikad ja andmete tõmbamine (Extract & Save to CSV)
-    api_prices[Elering NPS API] --> ingest_p[py ingest] --> prices_raw[processed/prices.csv]
-    api_weather[Open-Meteo API] --> ingest_w[py ingest] --> weather_raw[processed/weather.csv]
-    
-    %% 2. Sissevõtt andmebaasi (load_to_staging)
-    prices_raw -->  stg_prices[(stg_prices)]
-    weather_raw --> stg_weather[(stg_weather)]
-    
-    %% 3. Transformatsioon ja kvaliteedikontroll
-    stg_prices --> transform[transform]
-    stg_weather --> transform
-    transform --> quality[data quality tests]
-    
-    %% 4. Mart ja Väljundid
-    quality --> mart[mart dim & fct]
-    mart --> dashboard[dashboard]
-```
+    api1[Elering NPS API] --> airflow[Airflow DAG]
+    api2[Open-Meteo API] --> airflow
 
+    airflow --> staging[(PostgreSQL staging)]
+    staging --> dbt[dbt transformations]
+    dbt --> quality[data quality tests]
+    quality --> marts[(Mart tables)]
+    marts --> dashboard[Dashboard]
+```
 > Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
 
 ## Andmebaasi kihid
@@ -54,18 +45,19 @@ flowchart LR
 
 | Roll | Vastutus | Täitja |
 |------|----------|--------|
-| Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | [Nimi] |
-| Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | [Nimi] |
-| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | [Nimi] |
-| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | [Nimi] |
+| Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | Krista Killo |
+| Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | Annika Kaskma / Andres Matsin |
+| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Annika Kaskma / Andres Matsin |
+| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega |  Inga Staršinova |
 
 ## Riskid
 
 | Risk | Mõju | Maandus |
 |------|------|---------|
-| [Risk 1 — näiteks: API ei vasta] | [Mis juhtub?] | [Kuidas maandad?] |
-| [Risk 2] | [Mis juhtub?] | [Kuidas maandad?] |
-| [Risk 3] | [Mis juhtub?] | [Kuidas maandad?] |
+| API ei vasta või andmed tulevad hiljem | Päeva andmed ei jõua õigel ajal andmebaasi | Airflow retry loogika, hilisem käsitsi või automaatne korduskäivitus |
+| API vastuse struktuur muutub | DAG võib ebaõnnestuda, sest kood ootab kindlaid välju | Kontrollida vastuses vajalikke välju ja logida selged veateated |
+| Andmekvaliteedi probleemid | Analüüs ja dashboard võivad näidata valesid tulemusi | dbt testid: `not_null`, ridade arv, lubatud riigikoodid ja väärtuste vahemikud |
+| Ajavööndi vead | Elektrihinna ja ilmaandmed ei liitu õigete timestampidega | Kasutada kõikjal UTC timestampi ja kontrollida ridade vastavust joinis |
 
 ## Privaatsus ja turve
 
