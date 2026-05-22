@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DBT_DBNAME', env_var('POSTGRES_DB', 'energy_weather')) }}"
+    schema: staging
+    tables:
+      - name: elering_prices
+        description: Hourly Nord Pool electricity prices loaded from Elering.
+        loaded_at_field: loaded_at
+        columns:
+          - name: country_code
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ["EE", "FI", "LV", "LT"]
+          - name: timestamp_utc
+            tests:
+              - not_null
+          - name: price_eur_mwh
+            tests:
+              - not_null
+
+      - name: open_meteo_weather
+        description: Hourly weather observations loaded from Open-Meteo archive.
+        loaded_at_field: loaded_at
+        columns:
+          - name: country_code
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ["EE", "FI", "LV", "LT"]
+          - name: timestamp_utc
+            tests:
+              - not_null

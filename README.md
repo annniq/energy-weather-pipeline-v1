@@ -60,7 +60,7 @@ docker compose up -d --build
 # docker compose exec pipeline python scripts/run_pipeline.py run-all
 ```
 
-Airflow (kui kasutatakse): http://localhost:8080 (kasutaja: airflow / parool: airflow)
+Airflow (kui kasutatakse): http://localhost:8080 (kasutaja ja parool tulevad `.env` failist)
 Näidikulaud: http://localhost:[PORT]
 
 ## Saladused ja konfiguratsioon

@@ -1,0 +1,7 @@
+FROM apache/airflow:3.1.8
+
+USER airflow
+
+RUN python -m venv /opt/airflow/dbt_venv \
+    && /opt/airflow/dbt_venv/bin/pip install --no-cache-dir --upgrade pip \
+    && /opt/airflow/dbt_venv/bin/pip install --no-cache-dir dbt-core==1.9.0 dbt-postgres==1.9.0

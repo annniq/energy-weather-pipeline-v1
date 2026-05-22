@@ -1,0 +1,25 @@
+name: energy_weather_pipeline
+version: "1.0.0"
+config-version: 2
+
+profile: energy_weather_pipeline
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+clean-targets:
+  - target
+  - dbt_packages
+
+on-run-start:
+  - "{{ drop_stale_dbt_backups() }}"
+
+models:
+  energy_weather_pipeline:
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table

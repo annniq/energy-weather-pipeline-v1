@@ -2,6 +2,7 @@ from datetime import datetime, timedelta, timezone
 
 import pendulum
 from airflow.sdk import dag, task
+from airflow.providers.standard.operators.bash import BashOperator
 
 
 EXPECTED_COUNTRIES = {"EE", "FI", "LV", "LT"}
@@ -179,11 +180,7 @@ def energy_weather_pipeline():
             )
             VALUES (%s, %s, %s, %s, %s)
             ON CONFLICT (country_code, timestamp_utc)
-            DO UPDATE SET
-                price_eur_mwh = EXCLUDED.price_eur_mwh,
-                price_date = EXCLUDED.price_date,
-                source = EXCLUDED.source,
-                loaded_at = NOW();
+            DO NOTHING;
         """
 
         conn = hook.get_conn()
@@ -191,12 +188,13 @@ def energy_weather_pipeline():
         try:
             with conn.cursor() as cursor:
                 cursor.executemany(insert_sql, rows)
+                inserted_count = cursor.rowcount
 
             conn.commit()
         finally:
             conn.close()
 
-        return len(rows)
+        return inserted_count
 
     @task(retries=3, retry_delay=timedelta(minutes=1))
     def extract_open_meteo_weather(target_date: str) -> str:
@@ -349,14 +347,7 @@ def energy_weather_pipeline():
             )
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (country_code, timestamp_utc)
-            DO UPDATE SET
-                temperature_2m_c = EXCLUDED.temperature_2m_c,
-                wind_speed_10m_kmh = EXCLUDED.wind_speed_10m_kmh,
-                shortwave_radiation = EXCLUDED.shortwave_radiation,
-                cloud_cover = EXCLUDED.cloud_cover,
-                weather_date = EXCLUDED.weather_date,
-                source = EXCLUDED.source,
-                loaded_at = NOW();
+            DO NOTHING;
         """
 
         conn = hook.get_conn()
@@ -364,12 +355,13 @@ def energy_weather_pipeline():
         try:
             with conn.cursor() as cursor:
                 cursor.executemany(insert_sql, rows)
+                inserted_count = cursor.rowcount
 
             conn.commit()
         finally:
             conn.close()
 
-        return len(rows)
+        return inserted_count
 
     target_date = resolve_target_date()
 
@@ -379,7 +371,15 @@ def energy_weather_pipeline():
     prices_loaded = load_elering_prices(prices_raw_file)
     weather_loaded = load_open_meteo_weather(weather_raw_file)
 
-    [prices_loaded, weather_loaded]
+    dbt_build = BashOperator(
+        task_id="dbt_build",
+        bash_command="""
+            cd /opt/airflow/dbt
+            /opt/airflow/dbt_venv/bin/dbt build --no-partial-parse --project-dir /opt/airflow/dbt --profiles-dir /opt/airflow/dbt
+        """,
+    )
+
+    [prices_loaded, weather_loaded] >> dbt_build
 
 
 energy_weather_pipeline()

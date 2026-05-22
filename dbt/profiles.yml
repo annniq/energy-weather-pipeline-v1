@@ -1,0 +1,13 @@
+energy_weather_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_HOST', 'analytics-db') }}"
+      port: "{{ env_var('DBT_PORT', '5432') | int }}"
+      user: "{{ env_var('DBT_USER', env_var('POSTGRES_USER', 'energy')) }}"
+      password: "{{ env_var('DBT_PASSWORD', env_var('POSTGRES_PASSWORD')) }}"
+      dbname: "{{ env_var('DBT_DBNAME', env_var('POSTGRES_DB', 'energy_weather')) }}"
+      schema: dbt
+      threads: 2
+      keepalives_idle: 0

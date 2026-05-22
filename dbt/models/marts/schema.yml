@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: fct_energy_weather_hourly
+    description: Dashboard-ready hourly fact table with prices and weather.
+    columns:
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["EE", "FI", "LV", "LT"]
+      - name: timestamp_utc
+        tests:
+          - not_null
+      - name: price_eur_mwh
+        tests:
+          - not_null
+
+  - name: mart_energy_weather_daily
+    description: Daily country-level electricity price and weather summary.
+    columns:
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["EE", "FI", "LV", "LT"]
+      - name: date_utc
+        tests:
+          - not_null
+      - name: hourly_observation_count
+        tests:
+          - not_null
+
+  - name: mart_energy_weather_by_condition
+    description: Daily price summary grouped by weather condition buckets.
+    columns:
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["EE", "FI", "LV", "LT"]
+      - name: date_utc
+        tests:
+          - not_null
+      - name: temperature_band
+        tests:
+          - not_null
+      - name: wind_band
+        tests:
+          - not_null

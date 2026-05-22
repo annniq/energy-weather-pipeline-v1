@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: int_energy_weather_hourly
+    description: Hourly joined electricity price and weather data by country.
+    columns:
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["EE", "FI", "LV", "LT"]
+      - name: timestamp_utc
+        tests:
+          - not_null
+      - name: price_eur_mwh
+        tests:
+          - not_null
+      - name: temperature_band
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["unknown", "freezing", "cold", "mild", "warm"]
+      - name: wind_band
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["unknown", "low_wind", "medium_wind", "high_wind"]
