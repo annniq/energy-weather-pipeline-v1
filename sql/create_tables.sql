@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS staging.open_meteo_weather (
     shortwave_radiation     NUMERIC(10,2),
     cloud_cover             NUMERIC(6,2),
     weather_date            DATE NOT NULL,
-    source                  VARCHAR(50) NOT NULL DEFAULT 'open_meteo',
+    source                  VARCHAR(50) NOT NULL DEFAULT 'open_meteo_archive',
     loaded_at               TIMESTAMP NOT NULL DEFAULT NOW(),
     PRIMARY KEY (country_code, timestamp_utc)
 );

@@ -42,12 +42,9 @@ def energy_weather_pipeline():
     def resolve_target_date() -> str:
         """
         Manual run config:
-        {
-          "target_date": "2026-05-18"
-        }
+        docker compose exec airflow-apiserver airflow dags trigger energy_weather_pipeline \
+                --conf '{"target_date": "2025-05-21"}'
 
-        Scheduled run:
-        - loads yesterday based on Airflow's logical date
         """
         from airflow.sdk import get_current_context
 
@@ -79,16 +76,13 @@ def energy_weather_pipeline():
     def extract_elering_prices(target_date: str) -> str:
         """
         Downloads Elering NPS spot prices for one UTC calendar day.
-
-        The endpoint returns electricity price timestamps.
-        No hourly expansion is done.
         """
         import json
         import urllib.parse
         import urllib.request
 
         start_str = f"{target_date}T00:00:00.000Z"
-        end_str = f"{target_date}T23:45:00.000Z"
+        end_str = f"{target_date}T23:00:00.000Z"
 
         params = urllib.parse.urlencode(
             {
@@ -127,8 +121,7 @@ def energy_weather_pipeline():
     @task
     def load_elering_prices(raw_file_path: str) -> int:
         """
-        Loads Elering prices into:
-        staging.elering_prices
+        Loads hourly Elering prices into staging.elering_prices.
         """
         import json
         from datetime import datetime, timezone
@@ -158,6 +151,9 @@ def energy_weather_pipeline():
                 if str(timestamp_utc.date()) != target_date:
                     continue
 
+                if timestamp_utc.minute != 0:
+                    continue
+
                 rows.append(
                     (
                         country_code,
@@ -169,7 +165,7 @@ def energy_weather_pipeline():
                 )
 
         if not rows:
-            raise RuntimeError("No Elering price rows found to load")
+            raise RuntimeError("No hourly Elering price rows found to load")
 
         hook = PostgresHook(postgres_conn_id="analytics_db")
 
@@ -205,9 +201,10 @@ def energy_weather_pipeline():
     @task(retries=3, retry_delay=timedelta(minutes=1))
     def extract_open_meteo_weather(target_date: str) -> str:
         """
-        Downloads Open-Meteo 15-minute weather data for one UTC calendar day.
+        Downloads Open-Meteo hourly weather data for one UTC calendar day.
         """
         import json
+        import urllib.error
         import urllib.parse
         import urllib.request
 
@@ -220,7 +217,7 @@ def energy_weather_pipeline():
                     "longitude": location["longitude"],
                     "start_date": target_date,
                     "end_date": target_date,
-                    "minutely_15": (
+                    "hourly": (
                         "temperature_2m,"
                         "wind_speed_10m,"
                         "shortwave_radiation,"
@@ -230,21 +227,29 @@ def energy_weather_pipeline():
                 }
             )
 
-            url = f"https://api.open-meteo.com/v1/forecast?{params}"
+            url = f"https://archive-api.open-meteo.com/v1/archive?{params}"
 
-            with urllib.request.urlopen(url, timeout=60) as response:
-                if response.status != 200:
-                    raise RuntimeError(
-                        f"Open-Meteo API failed for {country_code} "
-                        f"with status {response.status}"
-                    )
+            try:
+                with urllib.request.urlopen(url, timeout=60) as response:
+                    if response.status != 200:
+                        raise RuntimeError(
+                            f"Open-Meteo Archive API failed for {country_code} "
+                            f"with status {response.status}"
+                        )
 
-                payload = json.loads(response.read().decode("utf-8"))
+                    payload = json.loads(response.read().decode("utf-8"))
 
-            if "minutely_15" not in payload:
+            except urllib.error.HTTPError as error:
+                error_body = error.read().decode("utf-8", errors="replace")
                 raise RuntimeError(
-                    f"Open-Meteo response for {country_code} "
-                    "does not contain 'minutely_15'"
+                    f"Open-Meteo Archive API failed for {country_code}. "
+                    f"HTTP {error.code}. URL: {url}. Response: {error_body}"
+                ) from error
+
+            if "hourly" not in payload:
+                raise RuntimeError(
+                    f"Open-Meteo Archive response for {country_code} "
+                    "does not contain 'hourly'"
                 )
 
             all_weather[country_code] = {
@@ -271,13 +276,19 @@ def energy_weather_pipeline():
     @task
     def load_open_meteo_weather(raw_file_path: str) -> int:
         """
-        Loads Open-Meteo weather data into:
-        staging.open_meteo_weather
+        Loads hourly Open-Meteo weather data into staging.open_meteo_weather.
         """
         import json
         from datetime import datetime, timezone
 
         from airflow.providers.postgres.hooks.postgres import PostgresHook
+
+        def value_at(values: list, index: int):
+            if values is None:
+                return None
+            if index >= len(values):
+                return None
+            return values[index]
 
         with open(raw_file_path, "r", encoding="utf-8") as file:
             wrapper = json.load(file)
@@ -288,13 +299,13 @@ def energy_weather_pipeline():
         rows = []
 
         for country_code, country_payload in countries.items():
-            minutely = country_payload["payload"]["minutely_15"]
+            hourly = country_payload["payload"]["hourly"]
 
-            times = minutely.get("time", [])
-            temperatures = minutely.get("temperature_2m", [])
-            wind_speeds = minutely.get("wind_speed_10m", [])
-            radiation = minutely.get("shortwave_radiation", [])
-            cloud_cover = minutely.get("cloud_cover", [])
+            times = hourly.get("time", [])
+            temperatures = hourly.get("temperature_2m", [])
+            wind_speeds_10m = hourly.get("wind_speed_10m", [])
+            radiation = hourly.get("shortwave_radiation", [])
+            cloud_cover = hourly.get("cloud_cover", [])
 
             for index, time_value in enumerate(times):
                 timestamp_utc = datetime.fromisoformat(time_value).replace(
@@ -304,21 +315,24 @@ def energy_weather_pipeline():
                 if str(timestamp_utc.date()) != target_date:
                     continue
 
+                if timestamp_utc.minute != 0:
+                    continue
+
                 rows.append(
                     (
                         country_code,
                         timestamp_utc,
-                        temperatures[index],
-                        wind_speeds[index],
-                        radiation[index],
-                        cloud_cover[index],
+                        value_at(temperatures, index),
+                        value_at(wind_speeds_10m, index),
+                        value_at(radiation, index),
+                        value_at(cloud_cover, index),
                         target_date,
-                        "open_meteo",
+                        "open_meteo_archive",
                     )
                 )
 
         if not rows:
-            raise RuntimeError("No Open-Meteo weather rows found to load")
+            raise RuntimeError("No hourly Open-Meteo weather rows found to load")
 
         hook = PostgresHook(postgres_conn_id="analytics_db")
 
