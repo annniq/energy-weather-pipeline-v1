@@ -47,8 +47,8 @@ flowchart LR
 |------|----------|--------|
 | Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | Krista Killo |
 | Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | Annika Kaskma / Andres Matsin |
-| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Annika Kaskma / Andres Matsin |
-| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega |  Inga Staršinova |
+| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Andres Matsin |
+| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | Annika Kaskma /  Inga Staršinova |
 
 ## Riskid
 
@@ -62,4 +62,4 @@ flowchart LR
 ## Privaatsus ja turve
 
 Isikuandmeid pole
-Andmebaasi paroolid peavad tulevad `.env` failist.
+Andmebaasi paroolid tulevad `.env` failist.
