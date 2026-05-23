@@ -37,9 +37,9 @@ flowchart LR
 
 | Kiht | Roll |
 |------|------|
-| `staging` | Tabelid (raw) ehk API toorandmed JSON kujul ja nende puhastatud CSV-d  |
+| `staging` | Tabelid (raw) ehk API toorandmed JSON kujul|
 | `intermediate` | Vaade | Skooriarvutus — ei salvestata, arvutatakse iga päringu korral |
-| `marts` | Tabel | Äriloogika kokkuvõtted, mida Superset loeb |
+| `marts` | Tabel | Äriloogika kokkuvõtted, mida Tableau loeb |
 
 ## Tööjaotus
 
