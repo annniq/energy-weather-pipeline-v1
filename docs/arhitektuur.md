@@ -3,14 +3,73 @@
 ## Äriküsimus
 
 Kuidas mõjutavad ilmastikutegurid — temperatuur, tuulekiirus, pilvisus ja päikesekiirgus — Eesti, Läti, Leedu, Soome elektri börsihinda? 
-Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate elektrihindadega ning millistel ilmastikuoludel tekivad kõrgemad hinnad?
+Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate elektrihindadega ning millistel ilmastikuoludel ja aastaaegadel tekivad kõrgemad hinnad?
+Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 
 ## Mõõdikud
 
-1) kuidas iga ilmastikunähtus eraldi mõjutab hinda 
-2) kuidas ilmastikunähtuste kombinatsioonid mõjutavad hinda  
-3) kuidas aastajad + ilmastikunähtased mõjutavad hinda
+1. **Kuidas iga ilmastikunähtus eraldi mõjutab hinda**  
+   *(nt tuulekiirus, temperatuur, sademed ja pilvisus eraldi regressioonimuutujatena)*
 
+   **Valem (kitsas mõttes):**
+
+   ```text
+   Hind_t = β0 + β1 * Tuul_t + β2 * Temp_t + β3 * Sademed_t + β4 * Pilvisus_t + ε_t
+   ```
+
+   kus:
+   - `Tuul_t` = tuulekiirus, m/s
+   - `Temp_t` = temperatuur, °C
+   - `Sademed_t` = sademete hulk, mm
+   - `Pilvisus_t` = pilvisuse määr, %
+
+---
+
+2. **Kuidas ilmastikunähtuste kombinatsioonid mõjutavad hinda**  
+   *(ehk ilmastikunäitajate koosmõjud/interaktsioonid, nt tugev tuul + madal temperatuur)*
+
+   **Valem (interaktsioonidega):**
+
+   ```text
+   Hind_t =
+     β0
+     + β1 * (Tuul_t * Temp_t)
+     + β2 * (Tuul_t * Sademed_t)
+     + β3 * (Temp_t * Sademed_t)
+     + β4 * (Tuul_t * Pilvisus_t)
+     + ε_t
+   ```
+
+   võimalikud kombinatsioonid:
+   - tugev tuul × madal temperatuur
+   - tugev tuul × suur pilvisus
+   - kõrge temperatuur × vähesed sademed
+   - madal temperatuur × lumi/vihm
+
+---
+
+3. **Kuidas aastaajad + ilmastikunähtused mõjutavad hinda**  
+   *(hooajalisuse ja ilma koosmõju)*
+
+   **Valem (hooajaliste dummy-muutujatega):**
+
+   ```text
+   Hind_t =
+     β0
+     + β1 * Suvi_t
+     + β2 * Talv_t
+     + β3 * Kevad_t
+     + β4 * Sügis_t
+     + β5 * (Talv_t * Tuul_t)
+     + β6 * (Suvi_t * Temp_t)
+     + β7 * (Sügis_t * Sademed_t)
+     + ε_t
+   ```
+
+   kus:
+   - `Suvi_t`, `Talv_t`, `Kevad_t`, `Sügis_t` = hooajalised binaarsed muutujad, 0/1
+   - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
+   
 ## Andmeallikad
 
 | Allikas | Tüüp | Ajas muutuv? | Roll |
