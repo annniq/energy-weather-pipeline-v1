@@ -14,13 +14,13 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    **Valem (kitsas mõttes):**
 
    ```text
-   Hind_t = β0 + β1 * Tuul_t + β2 * Temp_t + β3 * Sademed_t + β4 * Pilvisus_t + ε_t
+   Hind_t = β0 + β1 * Tuul_t + β2 * Temp_t + β3 * Päikesekiirgus_t + β4 * Pilvisus_t + ε_t
    ```
 
    kus:
    - `Tuul_t` = tuulekiirus, m/s
    - `Temp_t` = temperatuur, °C
-   - `Sademed_t` = sademete hulk, mm
+   - `Päikesekiirgus_t` = päikese kiirguse hulk, W/m²
    - `Pilvisus_t` = pilvisuse määr, %
 
 ---
@@ -34,8 +34,8 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    Hind_t =
      β0
      + β1 * (Tuul_t * Temp_t)
-     + β2 * (Tuul_t * Sademed_t)
-     + β3 * (Temp_t * Sademed_t)
+     + β2 * (Tuul_t * Päikesekiirgus_t)
+     + β3 * (Temp_t * Päikesekiirgus_t)
      + β4 * (Tuul_t * Pilvisus_t)
      + ε_t
    ```
@@ -43,9 +43,8 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    võimalikud kombinatsioonid:
    - tugev tuul × madal temperatuur
    - tugev tuul × suur pilvisus
-   - kõrge temperatuur × vähesed sademed
-   - madal temperatuur × lumi/vihm
-
+   - kõrge temperatuur × vähene päikesekiirgus
+   - madal temperatuur × kõrge päikesekiirgus
 ---
 
 3. **Kuidas aastaajad + ilmastikunähtused mõjutavad hinda**  
@@ -62,7 +61,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
      + β4 * Sügis_t
      + β5 * (Talv_t * Tuul_t)
      + β6 * (Suvi_t * Temp_t)
-     + β7 * (Sügis_t * Sademed_t)
+     + β7 * (Sügis_t * Päikesekiirgus_t)
      + ε_t
    ```
 
