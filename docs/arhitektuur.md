@@ -2,14 +2,14 @@
 
 ## Äriküsimus
 
-Kuidas mõjutavad ilmastikutegurid — temperatuur, tuulekiirus, pilvisus ja päikesekiirgus — Eesti, Läti, Leedu, Soome elektri ja CO2 börsihinda? 
+Kuidas mõjutavad ilmastikutegurid — temperatuur, tuulekiirus, pilvisus ja päikesekiirgus — Eesti, Läti, Leedu, Soome elektri börsihinda? 
 Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate elektrihindadega ning millistel ilmastikuoludel tekivad kõrgemad hinnad?
 
 ## Mõõdikud
 
-1. [Esimene mõõdik — kirjelda, mida arvutate ja kuidas]
-2. [Teine mõõdik]
-3. [Kolmas mõõdik — vabatahtlik]
+1) kuidas iga ilmastikunähtus eraldi mõjutab hinda 
+2) kuidas ilmastikunähtuste kombinatsioonid mõjutavad hinda  
+3) kuidas aastajad + ilmastikunähtased mõjutavad hinda
 
 ## Andmeallikad
 
@@ -37,9 +37,9 @@ flowchart LR
 
 | Kiht | Roll |
 |------|------|
-| `staging` | Tabelid (raw) ehk API toorandmed JSON kujul ja nende puhastatud CSV-d  |
+| `staging` | Tabelid (raw) ehk API toorandmed JSON kujul|
 | `intermediate` | Vaade | Skooriarvutus — ei salvestata, arvutatakse iga päringu korral |
-| `marts` | Tabel | Äriloogika kokkuvõtted, mida Superset loeb |
+| `marts` | Tabel | Äriloogika kokkuvõtted, mida Tableau loeb |
 
 ## Tööjaotus
 
@@ -47,8 +47,8 @@ flowchart LR
 |------|----------|--------|
 | Andmeallika omanik | Kirjutab sissevõtu loogika, hoiab API-t töös | Krista Killo |
 | Transformatsioonide omanik | Kirjutab mart kihi mudelid ja mõõdikute arvutuse | Annika Kaskma / Andres Matsin |
-| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Annika Kaskma / Andres Matsin |
-| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega |  Inga Staršinova |
+| Kvaliteedi omanik | Kirjutab testid ja vaatab läbi ebaõnnestunud kontrollid | Andres Matsin |
+| Näidikulaua omanik | Ehitab näidikulaua ja seob selle äriküsimusega | Annika Kaskma /  Inga Staršinova |
 
 ## Riskid
 
@@ -61,4 +61,5 @@ flowchart LR
 
 ## Privaatsus ja turve
 
-[Kirjelda, millised isiku- või tundlikud andmed teie projektis esinevad (kui üldse) ja kuidas neid kaitsete. Isikuandmed peavad olema anonümiseeritud. Andmebaasi paroolid peavad tulema `.env` failist.]
+Isikuandmeid pole
+Andmebaasi paroolid tulevad `.env` failist.
