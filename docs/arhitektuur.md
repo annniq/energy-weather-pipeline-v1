@@ -84,28 +84,28 @@ $$
 ## Average Temperature
 
 $$
-\text{AvgTemp}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{Temperature}_{c,t}
+\text{AvgTemp}_{c,p} = \text{average temperature riigis } c \text{ ajaperioodil } p
 $$
 
 
 ## Average Wind Speed
 
 $$
-\text{AvgWind}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{WindSpeed}_{c,t}
+\text{AvgWind}_{c,p} = \text{average wind speed riigis } c \text{ ajaperioodil } p
 $$
 
 
 ## Average Solar Radiation
 
 $$
-\text{AvgSolar}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{SolarRadiation}_{c,t}
+\text{AvgSolar}_{c,p} = \text{average solar radiation riigis } c \text{ ajaperioodil } p
 $$
 
 
 ## Average Cloud Cover
 
 $$
-\text{AvgCloud}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{CloudCover}_{c,t}
+\text{AvgCloud}_{c,p} = \text{average cloud cover riigis } c \text{ ajaperioodil } p
 $$
 
 
@@ -123,13 +123,8 @@ $$
 ## Kus
 
 $$
-\begin{aligned}
-c &\in \{EE, LV, LT, FI\} && \text{on riik} \\
-p & && \text{on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid} \\
-t & && \text{on ajahetk ajaperioodi sees} \\
-N_{c,p} & && \text{on vaatluste arv riigis } c \text{ ajaperioodil } p \\
-\alpha_i & && \text{on kaalud, mis kirjeldavad iga ilmateguri mõju elektrihinnale}
-\end{aligned}
+c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad 
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -140,8 +135,10 @@ Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab v�
 
 ## Tõlgendus
 
-Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi (külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
+Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi  
+(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
 mis on seotud kõrgema elektrihinnaga.
+
 
 ---------------------------------------------------------
 
