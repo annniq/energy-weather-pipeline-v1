@@ -109,7 +109,8 @@ $$
 \text{AvgCloud}_{c,p} = \text{average cloud cover riigis } c \text{ ajaperioodil } p
 $$
 
-
+---
+---
 ## Weather Impact Score
 
 $$
@@ -138,7 +139,8 @@ Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi
 (külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
 mis on seotud kõrgema elektrihinnaga.
 
-
+---
+---
 
 ## Price–Temperature Correlation
 
