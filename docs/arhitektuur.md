@@ -69,7 +69,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    - `Suvi_t`, `Talv_t`, `Kevad_t`, `Sügis_t` = hooajalised binaarsed muutujad, 0/1
    - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
 ---
-## Core metrics /Põhimõõdikud  :
+## Põhimõõdikud / Core metrics:
 
 Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
 
