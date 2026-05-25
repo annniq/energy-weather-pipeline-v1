@@ -73,16 +73,11 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 Lisan uued Core metrics alla:
 -------------------------------------------------
 
+
 ## Average Price (kWh)
 
 $$
 \text{AvgPrice}_{c,p}^{kWh} = \frac{1}{1000} \cdot \text{AvgPrice}_{c,p}^{MWh}
-$$
-
-$$
-\text{kus: } 
-c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad 
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -92,23 +87,11 @@ $$
 \text{AvgTemp}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{Temperature}_{c,t}
 $$
 
-$$
-\text{kus: } 
-c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
-$$
-
 
 ## Average Wind Speed
 
 $$
 \text{AvgWind}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{WindSpeed}_{c,t}
-$$
-
-$$
-\text{kus: } 
-c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -118,23 +101,11 @@ $$
 \text{AvgSolar}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{SolarRadiation}_{c,t}
 $$
 
-$$
-\text{kus: } 
-c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
-$$
-
 
 ## Average Cloud Cover
 
 $$
 \text{AvgCloud}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{CloudCover}_{c,t}
-$$
-
-$$
-\text{kus: } 
-c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -148,10 +119,23 @@ $$
 + \alpha_4 \cdot \text{AvgCloud}_{c,p}
 $$
 
+
+## Kus
+
 $$
-\text{kus: } 
-c = \text{riik}, \quad 
+c \in \{EE, LV, LT, FI\} \text{ on riik}
+$$
+
+$$
 p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
+$$
+
+$$
+t \text{ on ajahetk ajaperioodi sees}
+$$
+
+$$
+N_{c,p} \text{ on vaatluste arv riigis } c \text{ ajaperioodil } p
 $$
 
 $$
@@ -164,10 +148,9 @@ $$
 Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
 
 
-## Interpretation
+## Tõlgendus
 
-Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi  
-(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
+Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi (külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
 mis on seotud kõrgema elektrihinnaga.
 
 ---------------------------------------------------------
