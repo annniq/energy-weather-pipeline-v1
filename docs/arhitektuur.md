@@ -138,13 +138,6 @@ p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud fi
 $$
 
 
-## Märkus
-
-Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
-``
-
-
-
 ## Weather Impact Score
 
 $$
@@ -166,12 +159,17 @@ $$
 $$
 
 
+## Märkus
+
+Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
+
+
 ## Interpretation
 
-Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi 
-(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus), 
+Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi  
+(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
 mis on seotud kõrgema elektrihinnaga.
-``
+
 ---------------------------------------------------------
 
    
