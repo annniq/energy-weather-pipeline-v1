@@ -69,6 +69,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    - `Suvi_t`, `Talv_t`, `Kevad_t`, `Sügis_t` = hooajalised binaarsed muutujad, 0/1
    - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
 ---
+---
 ## Põhimõõdikud / Core metrics:
 
 Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
@@ -109,6 +110,36 @@ $$
 $$
 
 
+## Weather Impact Score
+
+$$
+\begin{aligned}
+\text{WeatherImpact}_{c,p} =
+& \ \alpha_1 \cdot (-\text{AvgTemp}_{c,p}) \\
+& + \alpha_2 \cdot (-\text{AvgWind}_{c,p}) \\
+& + \alpha_3 \cdot (-\text{AvgSolar}_{c,p}) \\
+& + \alpha_4 \cdot \text{AvgCloud}_{c,p}
+\end{aligned}
+$$
+
+
+$$
+\begin{aligned}
+\text{kus: } \\
+c &\in \{EE, LV, LT, FI\} \text{ on riik} \\
+p &\text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
+\end{aligned}
+$$
+
+
+## Tõlgendus
+
+Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi  
+(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
+mis on seotud kõrgema elektrihinnaga.
+
+
+
 ## Price–Temperature Correlation
 
 $$
@@ -147,35 +178,19 @@ p &\text{ on ajaperiood, mille lõikes korrelatsioon arvutatakse (nt kuu ajatelj
 $$
 
 
-
-## Weather Impact Score
-
-$$
-\begin{aligned}
-\text{WeatherImpact}_{c,p} =
-& \ \alpha_1 \cdot (-\text{AvgTemp}_{c,p}) \\
-& + \alpha_2 \cdot (-\text{AvgWind}_{c,p}) \\
-& + \alpha_3 \cdot (-\text{AvgSolar}_{c,p}) \\
-& + \alpha_4 \cdot \text{AvgCloud}_{c,p}
-\end{aligned}
-$$
-
-
-$$
-\begin{aligned}
-\text{kus: } \\
-c &\in \{EE, LV, LT, FI\} \text{ on riik} \\
-p &\text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
-\end{aligned}
-$$
-
-
 ## Tõlgendus
 
-Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi  
-(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus),  
-mis on seotud kõrgema elektrihinnaga.
+Korrelatsioonikordaja väärtus jääb vahemikku -1 kuni 1 ja näitab seose suunda ning tugevust:
 
+- Negatiivne väärtus (nt -0.7) tähendab, et ilma näitaja suurenedes elektrihind väheneb  
+- Positiivne väärtus (nt 0.3) tähendab, et ilma näitaja suurenedes elektrihind suureneb  
+- Väärtus 0 lähedal tähendab, et selget lineaarset seost ei esine  
+
+Tüüpiline tõlgendus ilmastiku kontekstis:
+
+- CorrPriceTemp < 0 → külmem ilm on seotud kõrgema hinnaga  
+- CorrPriceWind < 0 → madalam tuulekiirus on seotud kõrgema hinnaga  
+- CorrPriceSolar < 0 → väiksem päikesekiirgus on seotud kõrg
 
 ---------------------------------------------------------
 
