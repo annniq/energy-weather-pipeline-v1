@@ -70,6 +70,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
 
 Core metrics /Põhimõõdikud  :
+Kirjeldavad keskmisi ilmastiku- ja hinnanäitajaid riigi ja ajaperioodi lõikes ning võimaldavad analüüsida nende koosliikumist ajas
 -------------------------------------------------
 
 
