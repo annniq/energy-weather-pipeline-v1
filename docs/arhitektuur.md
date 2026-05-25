@@ -70,7 +70,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
 
 
-Lisan alla:
+Lisan uued alla:
 Core metrics:
 
 Average Price (kWh)
@@ -95,7 +95,6 @@ $$
 $$
 
 Average Wind Speed
-
 $$
 \text{AvgWind}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{WindSpeed}_{c,t}
 $$
