@@ -71,9 +71,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 
 ## Core metrics /Põhimõõdikud  :
 
- ```text
-Kirjeldavad keskmisi ilmastiku- ja elektrihinda riigi ja ajaperioodi lõikes & võimaldavad analüüsida nende koosliikumist ajas
-   ```
+Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
 -------------------------------------------------
 
 
@@ -132,14 +130,6 @@ c &\in \{EE, LV, LT, FI\} \text{ on riik} \\
 p &\text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 \end{aligned}
 $$
-
-
-
-
-
-## Märkus
-
-Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
 
 
 ## Tõlgendus
