@@ -74,7 +74,7 @@ Lisan uued Core metrics alla:
 -------------------------------------------------
 
 
-## Average Electricity Price (kWh)
+## Average Electricity Price (EUR/kWh)
 
 $$
 \text{AvgPrice}_{c,p}^{kWh} = \frac{1}{1000} \cdot \text{AvgPrice}_{c,p}^{MWh}
