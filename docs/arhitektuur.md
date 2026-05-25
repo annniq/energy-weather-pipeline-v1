@@ -126,13 +126,14 @@ $$
 \text{kus: }
 $$
 
-$$
-c \in \{EE, LV, LT, FI\} \text{ on riik}
-$$
 
 $$
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
+\begin{aligned}
+c &\in \{EE, LV, LT, FI\} \text{ on riik} \\
+p &\text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
+\end{aligned}
 $$
+
 
 
 
