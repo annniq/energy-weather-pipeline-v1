@@ -121,11 +121,19 @@ $$
 \end{aligned}
 $$
 
-## kus:
+
 $$
-c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad 
+\text{kus: }
+$$
+
+$$
+c \in \{EE, LV, LT, FI\} \text{ on riik}
+$$
+
+$$
 p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
+
 
 
 ## Märkus
