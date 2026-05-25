@@ -168,10 +168,9 @@ $$
 $$
 
 
-## Kus
-
 $$
 \begin{aligned}
+\text{kus: } \\
 c &\in \{EE, LV, LT, FI\} \text{ on riik} \\
 p &\text{ on ajaperiood, mille lõikes korrelatsioon arvutatakse (nt kuu ajateljel)}
 \end{aligned}
