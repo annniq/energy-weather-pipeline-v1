@@ -71,21 +71,23 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 
 
 Lisan uued alla:
+-------------------------------------------------
 Core metrics:
 
-Average Price (kWh)
+
+## Average Price (kWh)
+
 $$
 \text{AvgPrice}_{c,p}^{kWh} = \frac{1}{1000} \cdot \text{AvgPrice}_{c,p}^{MWh}
 $$
 
-kus: $c = \text{riik}, \quad p = \text{ajaperiood}$
-
-kus:
-c ∈ {EE, LV, LT, FI} tähistab riiki  
-p tähistab vaatlusperioodi (nt kuu, päev või hooaeg)
+$$
+\text{kus: } c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad p \text{ on ajaperiood (nt päev, kuu või hooaeg)}
 $$
 
-Average Temperature
+
+## Average Temperature
+
 $$
 \text{AvgTemp}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{Temperature}_{c,t}
 $$
@@ -94,7 +96,9 @@ $$
 \text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
 $$
 
-Average Wind Speed
+
+## Average Wind Speed
+
 $$
 \text{AvgWind}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{WindSpeed}_{c,t}
 $$
@@ -103,7 +107,8 @@ $$
 \text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
 $$
 
-Average Solar Radiation
+
+## Average Solar Radiation
 
 $$
 \text{AvgSolar}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{SolarRadiation}_{c,t}
@@ -113,8 +118,9 @@ $$
 \text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
 $$
 
- Average Cloud Cover
- 
+
+## Average Cloud Cover
+
 $$
 \text{AvgCloud}_{c,p} = \frac{1}{N_{c,p}} \sum_{t \in (c,p)} \text{CloudCover}_{c,t}
 $$
@@ -122,6 +128,7 @@ $$
 $$
 \text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
 $$
+
 
    
 ## Andmeallikad
