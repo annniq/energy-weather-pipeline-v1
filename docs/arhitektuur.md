@@ -77,7 +77,16 @@ Avg Price
 Avg Temp / Wind / Solar / Cloud
 
   ```text
-AvgPrice_{c,p}^{kWh} = (1/1000) * AvgPrice_{c,p}^{MWh},
+
+## Formula
+
+AvgPrice_{c,p}^{kWh} = (1 / 1000) * AvgPrice_{c,p}^{MWh}
+
+## Where
+
+- c = country  
+- p = time period
+
    ```
 kus:
 c ∈ {EE, LV, LT, FI} tähistab riiki  
