@@ -109,6 +109,45 @@ $$
 $$
 
 
+## Price–Temperature Correlation
+
+$$
+\text{CorrPriceTemp}_{c} = \text{correlation between AvgPrice and AvgTemp riigis } c \text{ üle ajaperioodide}
+$$
+
+
+## Price–Wind Correlation
+
+$$
+\text{CorrPriceWind}_{c} = \text{correlation between AvgPrice and AvgWind riigis } c \text{ üle ajaperioodide}
+$$
+
+
+## Price–Solar Radiation Correlation
+
+$$
+\text{CorrPriceSolar}_{c} = \text{correlation between AvgPrice and AvgSolar riigis } c \text{ üle ajaperioodide}
+$$
+
+
+## Price–Cloud Cover Correlation
+
+$$
+\text{CorrPriceCloud}_{c} = \text{correlation between AvgPrice and AvgCloud riigis } c \text{ üle ajaperioodide}
+$$
+
+
+## Kus
+
+$$
+\begin{aligned}
+c &\in \{EE, LV, LT, FI\} \text{ on riik} \\
+p &\text{ on ajaperiood, mille lõikes korrelatsioon arvutatakse (nt kuu ajateljel)}
+\end{aligned}
+$$
+
+
+
 ## Weather Impact Score
 
 $$
