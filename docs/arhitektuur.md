@@ -72,7 +72,8 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 
 Lisan uued alla:
 -------------------------------------------------
-Core metrics:
+## Core metrics:
+
 
 
 ## Average Price (kWh)
@@ -82,7 +83,9 @@ $$
 $$
 
 $$
-\text{kus: } c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad p \text{ on ajaperiood (nt päev, kuu või hooaeg)}
+\text{kus: } 
+c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad 
+p \text{ on ajaperiood (nt päev, kuu või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -93,7 +96,9 @@ $$
 $$
 
 $$
-\text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
+\text{kus: } 
+c = \text{riik}, \quad 
+p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
 $$
 
 
@@ -104,7 +109,9 @@ $$
 $$
 
 $$
-\text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
+\text{kus: } 
+c = \text{riik}, \quad 
+p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
 $$
 
 
@@ -115,7 +122,9 @@ $$
 $$
 
 $$
-\text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
+\text{kus: } 
+c = \text{riik}, \quad 
+p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
 $$
 
 
@@ -126,8 +135,17 @@ $$
 $$
 
 $$
-\text{kus: } c = \text{riik}, \quad p = \text{ajaperiood}
+\text{kus: } 
+c = \text{riik}, \quad 
+p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
 $$
+
+
+## Märkus
+
+Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
+``
+
 
 
    
