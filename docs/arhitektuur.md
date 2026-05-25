@@ -72,7 +72,6 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 ## Core metrics /Põhimõõdikud  :
 
 Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
--------------------------------------------------
 
 
 ## Average Electricity Price (EUR/kWh)
