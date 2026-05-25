@@ -76,18 +76,13 @@ Core metrics:
 Avg Price 
 Avg Temp / Wind / Solar / Cloud
 
-  ```text
 
-## Formula
+$$
+\text{AvgPrice}_{c,p}^{kWh} = \frac{1}{1000} \cdot \text{AvgPrice}_{c,p}^{MWh}
+$$
 
-AvgPrice_{c,p}^{kWh} = (1 / 1000) * AvgPrice_{c,p}^{MWh}
+kus: $c = \text{riik}, \quad p = \text{ajaperiood}$
 
-## Where
-
-- c = country  
-- p = time period
-
-   ```
 kus:
 c ∈ {EE, LV, LT, FI} tähistab riiki  
 p tähistab vaatlusperioodi (nt kuu, päev või hooaeg)
