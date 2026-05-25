@@ -145,6 +145,34 @@ Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab v�
 
 
 
+## Weather Impact Score
+
+$$
+\text{WeatherImpact}_{c,p} =
+\alpha_1 \cdot (-\text{AvgTemp}_{c,p})
++ \alpha_2 \cdot (-\text{AvgWind}_{c,p})
++ \alpha_3 \cdot (-\text{AvgSolar}_{c,p})
++ \alpha_4 \cdot \text{AvgCloud}_{c,p}
+$$
+
+$$
+\text{kus: } 
+c = \text{riik}, \quad 
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
+$$
+
+$$
+\alpha_i \text{ on kaalud, mis kirjeldavad iga ilmateguri mõju elektrihinnale}
+$$
+
+
+## Interpretation
+
+Suurem Weather Impact Score tähendab ebasoodsamaid tootmistingimusi 
+(külmem ilm, madalam tuulekiirus, väiksem päikesekiirgus, suurem pilvisus), 
+mis on seotud kõrgema elektrihinnaga.
+``
+---------------------------------------------------------
 
    
 ## Andmeallikad
