@@ -68,6 +68,22 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    kus:
    - `Suvi_t`, `Talv_t`, `Kevad_t`, `Sügis_t` = hooajalised binaarsed muutujad, 0/1
    - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
+
+
+Lisan alla:
+Core metrics:
+
+Avg Price 
+Avg Temp / Wind / Solar / Cloud
+
+
+AvgPrice_{c,p}^{kWh} = (1/1000) * AvgPrice_{c,p}^{MWh},
+
+kus:
+c ∈ {EE, LV, LT, FI} tähistab riiki  
+p tähistab vaatlusperioodi (nt kuu, päev või hooaeg)
+
+
    
 ## Andmeallikad
 
