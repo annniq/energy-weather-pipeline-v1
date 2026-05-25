@@ -191,8 +191,10 @@ Tüüpiline tõlgendus ilmastiku kontekstis:
 
 - CorrPriceTemp < 0 → külmem ilm on seotud kõrgema hinnaga  
 - CorrPriceWind < 0 → madalam tuulekiirus on seotud kõrgema hinnaga  
-- CorrPriceSolar < 0 → väiksem päikesekiirgus on seotud kõrg
+- CorrPriceSolar < 0 → väiksem päikesekiirgus on seotud kõrgema hinnaga  
+- CorrPriceCloud > 0 → suurem pilvisus on seotud kõrgema hinnaga  
 
+Mida suurem on korrelatsioonikordaja absoluutväärtus (|corr|), seda tugevam on seos elektrihinna ja ilmateguri vahel.
 ---------------------------------------------------------
 
    
