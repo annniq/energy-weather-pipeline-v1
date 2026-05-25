@@ -123,23 +123,13 @@ $$
 ## Kus
 
 $$
-c \in \{EE, LV, LT, FI\} \text{ on riik}
-$$
-
-$$
-p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
-$$
-
-$$
-t \text{ on ajahetk ajaperioodi sees}
-$$
-
-$$
-N_{c,p} \text{ on vaatluste arv riigis } c \text{ ajaperioodil } p
-$$
-
-$$
-\alpha_i \text{ on kaalud, mis kirjeldavad iga ilmateguri mõju elektrihinnale}
+\begin{aligned}
+c &\in \{EE, LV, LT, FI\} && \text{on riik} \\
+p & && \text{on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid} \\
+t & && \text{on ajahetk ajaperioodi sees} \\
+N_{c,p} & && \text{on vaatluste arv riigis } c \text{ ajaperioodil } p \\
+\alpha_i & && \text{on kaalud, mis kirjeldavad iga ilmateguri mõju elektrihinnale}
+\end{aligned}
 $$
 
 
