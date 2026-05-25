@@ -83,7 +83,7 @@ kus: $c = \text{riik}, \quad p = \text{ajaperiood}$
 kus:
 c ∈ {EE, LV, LT, FI} tähistab riiki  
 p tähistab vaatlusperioodi (nt kuu, päev või hooaeg)
-
+$$
 
 Average Temperature
 $$
