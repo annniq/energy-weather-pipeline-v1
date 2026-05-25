@@ -70,11 +70,8 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
    - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
 
 
-Lisan uued alla:
+Lisan uued Core metrics alla:
 -------------------------------------------------
-## Core metrics:
-
-
 
 ## Average Price (kWh)
 
@@ -85,7 +82,7 @@ $$
 $$
 \text{kus: } 
 c \in \{EE, LV, LT, FI\} \text{ on riik}, \quad 
-p \text{ on ajaperiood (nt päev, kuu või hooaeg), arvestades valitud filtreid}
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -98,7 +95,7 @@ $$
 $$
 \text{kus: } 
 c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -111,7 +108,7 @@ $$
 $$
 \text{kus: } 
 c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -124,7 +121,7 @@ $$
 $$
 \text{kus: } 
 c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -137,7 +134,7 @@ $$
 $$
 \text{kus: } 
 c = \text{riik}, \quad 
-p \text{ on ajaperiood (nt kuu), arvestades valitud filtreid}
+p \text{ on ajaperiood (nt päev, kuu, aasta või hooaeg), arvestades valitud filtreid}
 $$
 
 
@@ -145,6 +142,7 @@ $$
 
 Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
 ``
+
 
 
 
