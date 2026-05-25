@@ -72,7 +72,7 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 Core metrics /Põhimõõdikud  :
 
  ```text
-Kirjeldavad keskmisi ilmastiku- ja hinnanäitajaid riigi ja ajaperioodi lõikes & võimaldavad analüüsida nende koosliikumist ajas
+Kirjeldavad keskmisi ilmastiku- ja elektrihinda riigi ja ajaperioodi lõikes & võimaldavad analüüsida nende koosliikumist ajas
    ```
 -------------------------------------------------
 
