@@ -112,11 +112,13 @@ $$
 ## Weather Impact Score
 
 $$
+\begin{aligned}
 \text{WeatherImpact}_{c,p} =
-\alpha_1 \cdot (-\text{AvgTemp}_{c,p})
-+ \alpha_2 \cdot (-\text{AvgWind}_{c,p})
-+ \alpha_3 \cdot (-\text{AvgSolar}_{c,p})
-+ \alpha_4 \cdot \text{AvgCloud}_{c,p}
+& \ \alpha_1 \cdot (-\text{AvgTemp}_{c,p}) \\
+& + \alpha_2 \cdot (-\text{AvgWind}_{c,p}) \\
+& + \alpha_3 \cdot (-\text{AvgSolar}_{c,p}) \\
+& + \alpha_4 \cdot \text{AvgCloud}_{c,p}
+\end{aligned}
 $$
 
 
