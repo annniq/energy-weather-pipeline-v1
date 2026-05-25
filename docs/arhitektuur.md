@@ -73,7 +73,7 @@ Core metrics /Põhimõõdikud  :
 
  ```text
 Kirjeldavad keskmisi ilmastiku- ja hinnanäitajaid riigi ja ajaperioodi lõikes ning võimaldavad analüüsida nende koosliikumist ajas
----
+   ```
 -------------------------------------------------
 
 
