@@ -8,68 +8,6 @@ Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
 
 ## Mõõdikud
 
-1. **Kuidas iga ilmastikunähtus eraldi mõjutab hinda**  
-   *(nt tuulekiirus, temperatuur, sademed ja pilvisus eraldi regressioonimuutujatena)*
-
-   **Valem (kitsas mõttes):**
-
-   ```text
-   Hind_t = β0 + β1 * Tuul_t + β2 * Temp_t + β3 * Päikesekiirgus_t + β4 * Pilvisus_t + ε_t
-   ```
-
-   kus:
-   - `Tuul_t` = tuulekiirus, m/s
-   - `Temp_t` = temperatuur, °C
-   - `Päikesekiirgus_t` = päikese kiirguse hulk, W/m²
-   - `Pilvisus_t` = pilvisuse määr, %
-
----
-
-2. **Kuidas ilmastikunähtuste kombinatsioonid mõjutavad hinda**  
-   *(ehk ilmastikunäitajate koosmõjud/interaktsioonid, nt tugev tuul + madal temperatuur)*
-
-   **Valem (interaktsioonidega):**
-
-   ```text
-   Hind_t =
-     β0
-     + β1 * (Tuul_t * Temp_t)
-     + β2 * (Tuul_t * Päikesekiirgus_t)
-     + β3 * (Temp_t * Päikesekiirgus_t)
-     + β4 * (Tuul_t * Pilvisus_t)
-     + ε_t
-   ```
-
-   võimalikud kombinatsioonid:
-   - tugev tuul × madal temperatuur
-   - tugev tuul × suur pilvisus
-   - kõrge temperatuur × vähene päikesekiirgus
-   - madal temperatuur × kõrge päikesekiirgus
----
-
-3. **Kuidas aastaajad + ilmastikunähtused mõjutavad hinda**  
-   *(hooajalisuse ja ilma koosmõju)*
-
-   **Valem (hooajaliste dummy-muutujatega):**
-
-   ```text
-   Hind_t =
-     β0
-     + β1 * Suvi_t
-     + β2 * Talv_t
-     + β3 * Kevad_t
-     + β4 * Sügis_t
-     + β5 * (Talv_t * Tuul_t)
-     + β6 * (Suvi_t * Temp_t)
-     + β7 * (Sügis_t * Päikesekiirgus_t)
-     + ε_t
-   ```
-
-   kus:
-   - `Suvi_t`, `Talv_t`, `Kevad_t`, `Sügis_t` = hooajalised binaarsed muutujad, 0/1
-   - mõõdetakse näiteks, kas tuule mõju hinnale on talvel tugevam kui suvel
----
----
 ## Põhimõõdikud / Core metrics:
 
 Kõik näitajad arvutatakse sama riigi ja ajaperioodi lõikes, mis võimaldab võrrelda elektrihinna ja ilmastiku komponentide koosliikumist ajas.
