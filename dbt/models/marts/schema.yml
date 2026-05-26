@@ -1,4 +1,4 @@
-version: 2
+version: 3
 
 models:
   - name: fct_energy_weather_hourly
@@ -42,9 +42,15 @@ models:
       - name: date_utc
         tests:
           - not_null
-      - name: temperature_band
+      - name: temperature_category
         tests:
           - not_null
-      - name: wind_band
+      - name: wind_category
+        tests:
+          - not_null
+      - name: solar_category
+        tests:
+          - not_null
+      - name: cloud_category
         tests:
           - not_null
