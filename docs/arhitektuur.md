@@ -121,6 +121,14 @@ $$
 
 Korrelatsioonikordaja väärtus jääb vahemikku -1 kuni 1 ja näitab seose suunda ning tugevust:
 
+Kui tunnused on kasvavalt seotud on r>0.
+Kui tunnused on kahanevalt seotud, on r<0.
+Kui tunnused on sõltumatud, siis r =0.
+
+Nõrk seos: kordaja |r|< kui 0.3
+Keskmine seos: kordaja 0.3< |r| < 0.7.
+Tugev seos: kordaja |r|> 0.7.
+
 - Negatiivne väärtus (nt -0.7) tähendab, et ilma näitaja suurenedes elektrihind väheneb  
 - Positiivne väärtus (nt 0.3) tähendab, et ilma näitaja suurenedes elektrihind suureneb  
 - Väärtus 0 lähedal tähendab, et selget lineaarset seost ei esine  
