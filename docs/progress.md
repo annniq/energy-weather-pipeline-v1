@@ -25,6 +25,7 @@ Vajab tegemist :
 - Mida järeldada andmetest, kas saab täpsustada äriküsimust
 - Eemadalda kõik "bugid" dashboardidelt
 - Täiendada graafikud
+- täiendada andmekvaliteediteste
 
 ## Mis takistab
 
