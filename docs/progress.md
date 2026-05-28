@@ -21,7 +21,7 @@
 - [Dash 3](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash3?publish=yes).
 
 Vajab tegemist :
-- Kuidas panna uuendema Tabeleau Public extract
+- Kuidas panna automaatselt uuenema Tabeleau Public extract
 - Mida järeldada andmetest, kas saab täpsustada äriküsimust
 - Eemadalda kõik "bugid" dashboardidelt
 - Täiendada graafikud
