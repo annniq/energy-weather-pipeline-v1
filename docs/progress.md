@@ -15,14 +15,16 @@
 
 ## Järgmised sammud
 
-- [Esimene tegevus, mis ees ootab]
-- [Teine tegevus]
-- [Kolmas tegevus]
 - Esimesed dashboardi näited:
 - [Dash 1](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash1?publish=yes).
 - [Dash 2](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash2?publish=yes).
 - [Dash 3](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash3?publish=yes).
 
+Vajab tegemist :
+- kuidas panna uuendema Tabeleau public extract
+- mida järeldada andmetest, kas saab täpsustada äriküsimust
+- eemadalda kõik "bugid" dashboardidelt
+- täiendada graafikud
 
 ## Mis takistab
 
