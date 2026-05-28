@@ -24,8 +24,8 @@ Vajab tegemist :
 - Kuidas panna automaatselt uuenema Tabeleau Public extract
 - Mida järeldada andmetest, kas saab täpsustada äriküsimust
 - Eemadalda kõik "bugid" dashboardidelt
-- Täiendada graafikud
-- täiendada andmekvaliteediteste
+- Täiendada dashboarde
+- Täiendada andmekvaliteediteste
 
 ## Mis takistab
 
