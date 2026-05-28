@@ -21,10 +21,10 @@
 - [Dash 3](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash3?publish=yes).
 
 Vajab tegemist :
-- kuidas panna uuendema Tabeleau public extract
-- mida järeldada andmetest, kas saab täpsustada äriküsimust
-- eemadalda kõik "bugid" dashboardidelt
-- täiendada graafikud
+- Kuidas panna uuendema Tabeleau Public extract
+- Mida järeldada andmetest, kas saab täpsustada äriküsimust
+- Eemadalda kõik "bugid" dashboardidelt
+- Täiendada graafikud
 
 ## Mis takistab
 
