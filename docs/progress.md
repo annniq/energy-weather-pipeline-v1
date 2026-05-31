@@ -38,7 +38,12 @@ Käsk, millega saab kontrollida, et töövoog töötab:
 ```bash
 # [Lisa siia käsk, mis näitab, et andmed liiguvad allikast näidikulauani]
 # Näiteks:
-docker compose exec pipeline python scripts/run_pipeline.py check
+docker compose exec airflow-scheduler airflow dags trigger energy_weather_pipeline
 ```
 
-Oodatav tulemus: [Kirjelda, mida töötav süsteem väljastab]
+Oodatav tulemus ja näidikulaua testimine
+Andmetorustiku käivitamine:
+Pärast käsu käivitamist peaks terminalis kuvatav tabel näitama, et käsk töötas ja DAG läks edukalt käivitusjärjekorda (olekusse queued või running).
+
+Näidikulaua kontrollimine:
+Selleks, et testida, kas andmed jõudsid lõpuks edukalt näidikulauani, saab kodutöö_dash_v1.twbx faili üles laadida ja testida Tableau Public keskkonnas.
