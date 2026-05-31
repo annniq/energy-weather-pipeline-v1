@@ -1,6 +1,6 @@
 # Edenemisraport
 
-> **Juhend:** See fail on projektitöö teise nädala väljund. Uuenda lühidalt iga esitamise eel. Kustuta see juhendrida.
+
 
 ## Mis on valmis
 
