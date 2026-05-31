@@ -11,7 +11,7 @@
 - [x] Vähemalt üks näidikulaud on nähtaval
 - [x] Vähemalt üks andmekvaliteedi test läbib
 
-[Täpsusta lühidalt, mis täpselt valmis on]
+
 
 ## Järgmised sammud
 
@@ -25,6 +25,7 @@ Vajab tegemist :
 - Mida järeldada andmetest, kas saab täpsustada äriküsimust
 - Eemadalda kõik "bugid" ja täiendada dashboarde
 - Täiendada andmekvaliteediteste
+- korrigeerida dashboardi graafikuid ja parendada visualiseeringuid
 
 ## Mis takistab
 
