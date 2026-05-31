@@ -29,8 +29,7 @@ Vajab tegemist :
 
 ## Mis takistab
 
-- [Probleem 1 — näiteks: API tagastab vigaseid väärtusi ühes linnas]
-- [Probleem 2 — või: "Praegu pole blokeerivaid probleeme"]
+- Praegu pole blokeerivaid probleeme
 
 ## Kontrollpunkt
 
