@@ -190,6 +190,8 @@ flowchart LR
 | API vastuse struktuur muutub | DAG võib ebaõnnestuda, sest kood ootab kindlaid välju | Kontrollida vastuses vajalikke välju ja logida selged veateated |
 | Andmekvaliteedi probleemid | Analüüs ja dashboard võivad näidata valesid tulemusi | dbt testid: `not_null`, ridade arv, lubatud riigikoodid ja väärtuste vahemikud |
 | Ajavööndi vead | Elektrihinna ja ilmaandmed ei liitu õigete timestampidega | Kasutada kõikjal UTC timestampi ja kontrollida ridade vastavust joinis |
+| Ilmastikutegurid ei ole ainsad elektrihinda mõjutavad muutujad | Elektri börsihinda mõjutavad lisaks ilmastikutingimustele ka elektritarbimise maht, elektrijaamade hooldus- ja remonditööd, energiaimpordi ja -ekspordi mahud, kütusehinnad ning geopoliitilised tegurid |Analüüsi ulatus piiratakse ilmastikutegurite ja elektrihinna vaheliste seoste uurimisega. Töö järeldustes rõhutatakse, et tulemusi tuleb tõlgendada koos teadmisega, et elektrihinda mõjutavad ka muud tegurid, mida käesolevas analüüsis ei käsitleta |
+| Korrelatsioon ei tähenda põhjuslikkust | Dashboardis kasutatud korrelatsioonianalüüs näitab muutujate vahelisi seoseid, kuid ei tõesta otsest põhjus-tagajärg seost. Näiteks võib elektrihinda mõjutada samaaegselt mitu tegurit, mida analüüs ei hõlma |Tulemuste esitamisel kasutatakse sõnastusi „seos“, „korrelatsioon“ ja „seotud tegurid“ ning välditakse väiteid otsese mõju või põhjus-tagajärg seose kohta |
 
 ## Privaatsus ja turve
 
