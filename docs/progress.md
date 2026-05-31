@@ -11,7 +11,7 @@
 - [x] Vähemalt üks näidikulaud on nähtaval
 - [x] Vähemalt üks andmekvaliteedi test läbib
 
-
+Projektis on valminud terviklik andmevoog alates andmete sissevõtust kuni visualiseerimiseni. Andmed kogutakse kahest erinevast allikast, laaditakse automaatselt üks kord päevas ning teisendatakse analüüsiks sobivale kujule, sealhulgas viiakse läbi vajalikud tüübiteisendused ja luuakse dimensioonide ning mõõdikute jaoks sobivad väljad. Tableaus on loodud esmased visualiseeringud, mis sisaldavad KPI-sid ja graafikuid elektrihinna ning ilmastikutegurite vaheliste korrelatsioonide analüüsimiseks riikide ja kuude lõikes.
 
 ## Järgmised sammud
 
