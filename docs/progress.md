@@ -23,7 +23,7 @@ Projektis on valminud terviklik andmevoog alates andmete sissevõtust kuni visua
 Vajab tegemist :
 - Kuidas panna automaatselt uuenema Tabeleau Public extract
 - Mida järeldada andmetest, kas saab täpsustada äriküsimust
-- Eemadalda kõik "bugid" ja täiendada dashboarde
+- Eemadalda näidiklaualt kõik "bugid" 
 - Täiendada andmekvaliteediteste
 - Korrigeerida dashboardi graafikuid ja parendada visualiseeringuid
 
