@@ -14,6 +14,6 @@ where
     
     -- 2. Ilmaandmete vahemike kontrollid
     or temperature_2m_c not between -50 and 50
-    or wind_speed_10m_kmh not between 0 and 120
+    or wind_speed_10m_kmh not between 0 and 125
     or shortwave_radiation < 0
     or cloud_cover not between 0 and 100
