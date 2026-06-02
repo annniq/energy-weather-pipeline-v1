@@ -163,7 +163,7 @@ flowchart LR
     quality --> marts[(Mart tables)]
     marts --> dashboard[Dashboard]
 ```
-> Täpsusta diagrammi vastavalt oma projektile — lisa rohkem andmeallikaid, mudeleid või teenuseid.
+
 
 ## Andmebaasi kihid
 
