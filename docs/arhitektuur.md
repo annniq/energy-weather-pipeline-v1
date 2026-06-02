@@ -2,9 +2,9 @@
 
 ## Äriküsimus
 
-Kuidas mõjutavad ilmastikutegurid — temperatuur, tuulekiirus, pilvisus ja päikesekiirgus — Eesti, Läti, Leedu, Soome elektri börsihinda? 
-Kas külmem ilm, väiksem tuul või madalam päikesekiirgus on seotud kõrgemate elektrihindadega ning millistel ilmastikuoludel ja aastaaegadel tekivad kõrgemad hinnad?
-Täpsustame äriküsimuse ja mõõdikud teisipäevasel konsultatsioonil.
+Milline seos esineb temperatuuri, tuulekiiruse, pilvisuse ja päikesekiirguse ning elektri börsihinna vahel Eestis, Lätis, Leedus 
+ja Soomes ning kuidas erinevad elektrihinna ja ilmastikunäitajate muutused kuude lõikes?
+
 
 ## Mõõdikud
 
