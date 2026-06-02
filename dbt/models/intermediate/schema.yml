@@ -1,8 +1,8 @@
-version: 3
+version: 4
 
 models:
   - name: int_energy_weather_hourly
-    description: "Intermediate model for energy prices and weather categories"
+    description: "Intermediate model tested with native dbt tests only."
     columns:
       - name: country_code
         tests:
@@ -14,26 +14,26 @@ models:
         tests:
           - not_null
 
-      - name: temperature_category  
+      - name: hour_utc
         tests:
           - not_null
-          - accepted_values:
-              values: ['N/A', 'Freezing', 'Cold', 'Mild', 'Warm']
 
-      - name: wind_category      
+      - name: price_eur_mwh
         tests:
           - not_null
-          - accepted_values:
-              values: ['N/A', 'Low Wind', 'Medium Wind', 'High Wind']
 
-      - name: solar_category
+      - name: temperature_2m_c
         tests:
           - not_null
-          - accepted_values:
-              values: ['N/A', 'Very Sunny', 'Sunny', 'Cloudy/Night']
 
-      - name: cloud_category
+      - name: wind_speed_10m_kmh
         tests:
           - not_null
-          - accepted_values:
-              values: ['N/A', 'Clear Sky', 'Partly Cloudy', 'Overcast']
+
+      - name: shortwave_radiation
+        tests:
+          - not_null
+
+      - name: cloud_cover
+        tests:
+          - not_null
