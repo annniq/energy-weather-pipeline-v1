@@ -434,7 +434,7 @@ Tableau Publicu dashboardide lingid:
 
 **Mis edasi:**
 
-- Automatiseerida andmete uuendamine Tableau’s, eksportides dbt marts-tabelite tulemused vahekihi kaudu automaatselt pilvefaili (nt CSV või Google Sheets). See tagaks näidikulaua igapäevase uuendamise ilma litsentsikuludeta; alternatiivina saab kasutada Tableau litsentsilahendust.
+- Automatiseerida andmete uuendamine Tableau’s, eksportides dbt marts-tabelite tulemused vahekihi kaudu automaatselt pilvefaili (nt CSV või Google Sheets). See tagaks näidikulaua igapäevase uuendamise ilma litsentsikuludeta; alternatiivina võiks kasutada Tableau litsentsilahendust.
 - Lisada automaatne teavitus, kui DAG või dbt testid ebaõnnestuvad.
 - Rakendada dashboardil rikkalikumat analüütikat, kasutades marts-kihis olemasolevaid lisamõõdikuid, näiteks erinevaid ilmanähtuste kategooriaid, ekstreemväärtusi ning päeva- ja öötundide hindu. Nende näitajate kaasamine võimaldaks teha täiendavaid võrdlusi ning tuvastada uusi seoseid.
 - Võtta kasutusele Fingrid Open Data API (Estlink kaablite tööolekuks) ja EU ETS CO₂ hinna API, et projekti mudelit edasi arendada ja analüüsi täpsustada
