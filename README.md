@@ -428,7 +428,7 @@ Tableau Publicu dashboardide lingid:
 
 **Puudused:**
 
-- Hetkel kasutatakse ilmaandmeteks linnade koordinaate, mitte kogu riigi keskmist ilma?
+- Hetkel kasutatakse ilmaandmeteks linnade koordinaate, mitte kogu riigi keskmist ilma.
 - Analüüs näitab seoseid, kuid ei tõesta põhjuslikku mõju.
 - Tableau Publicu tasuta litsents ei toeta otsest reaalaja-ühendust (Live Connection) privaatsete andmebaasidega.
 
