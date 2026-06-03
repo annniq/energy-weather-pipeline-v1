@@ -7,7 +7,7 @@ Tulemusi saavad kasutada andmeanalüütikud või energiahuvilised, et mõista, m
 
 **Mõõdikud:**
 
-1. Keskmine elektrihind riigi ja päeva lõikes, `avg_price_eur_mwh`
+1. Keskmine elektrihind riigi ja päeva lõikes
 2. Elektrihinna seos ilmaandmetega: temperatuur, tuulekiirus, päikesekiirgus ja pilvisus
 3. Keskmine hind ilma kategooriate lõikes, näiteks `temperature_category`, `wind_category`, `solar_category`, `cloud_category`
 
