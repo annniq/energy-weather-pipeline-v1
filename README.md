@@ -2,7 +2,7 @@
 
 ## Äriküsimus
 
-Projekt analüüsib, kuidas ilmastikutegurid — temperatuur, tuulekiirus, päikesekiirgus ja pilvisus — on seotud Eesti ja lähiriikide elektri börsihinnaga. 
+Projekti käigus analüüsime, kuidas ilmastikutegurid — temperatuur, tuulekiirus, päikesekiirgus ja pilvisus — on seotud Eesti ja lähiriikide elektri börsihinnaga. 
 Tulemusi saavad kasutada andmeanalüütikud või energiahuvilised, et mõista, millistel ilmastiku- ja ajatingimustel on elektrihind kõrgem või madalam.
 
 **Mõõdikud:**
