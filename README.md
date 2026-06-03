@@ -359,9 +359,9 @@ Näidikulaud on loodud Tableau Publicus. Dashboard kasutab dbt mart-kihi tabelei
 
 Tableau Publicu dashboardi link:
 
-[General Trends - korrelatsioon] (https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash3)
-[Regional Comparison] (https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash2)
-[Weather and Price Timeline] (https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash1)
+[General Trends - korrelatsioon](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash3)
+[Regional Comparison](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash2)
+[Weather and Price Timeline](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash1)
 
 
 ## Projekti struktuur
