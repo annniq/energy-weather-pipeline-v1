@@ -65,7 +65,7 @@ Tunnipõhise andmestiku puhul on ühe täispäeva oodatav ridade arv ühe tabeli
 ### 1. Klooni repo ja liigu projekti kausta
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/annniq/energy-weather-pipeline-v1.git
 cd energy-weather-pipeline-v1
 ```
 
@@ -146,13 +146,6 @@ energy_weather_pipeline
 
 DAG käivitub automaatselt iga päev kell `00:30 UTC`.
 
-Eesti aja järgi tähendab see ligikaudu:
-
-```text
-talveajal 02:30
-suveajal 03:30
-```
-
 DAG laadib vaikimisi eelmise päeva andmed. Käsitsi saab kindla kuupäeva laadida nii:
 
 ```bash
@@ -180,10 +173,11 @@ docker compose exec airflow-scheduler /opt/airflow/dbt_venv/bin/dbt debug \
   --project-dir /opt/airflow/dbt \
   --profiles-dir /opt/airflow/dbt
 ```
+Täpsem kirjeldus: [`docs/dbt.md`](docs/dbt.md)
 
 ## Saladused ja konfiguratsioon
 
-Kõik paroolid ja võtmed on `.env` failis. Repos on ainult `.env.example`, mis näitab vajalike muutujate struktuuri. Päris `.env` faili ei tohi GitHubi panna — see peab olema `.gitignore`-s.
+Kõik paroolid ja võtmed on `.env` failis. Repos on ainult `.env.example`, mis näitab vajalike muutujate struktuuri. 
 
 Vajalikud muutujad:
 
@@ -439,7 +433,7 @@ Tableau Publicu dashboardi link:
 
 **Mis edasi:**
 
-- Automatiseerida Tableau Publicu jaoks vajaliku andmeekspordi loomine mart-tabelitest.
+- Automatiseerida Tableau Publicu jaoks vajaliku andmeekspordi loomine mart-tabelitest?
 - Lisada automaatne teavitus, kui DAG või dbt testid ebaõnnestuvad.
 
 
