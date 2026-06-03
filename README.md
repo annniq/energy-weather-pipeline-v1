@@ -436,6 +436,7 @@ Tableau Publicu dashboardide lingid:
 
 - Automatiseerida Tableau Publicu jaoks vajaliku andmeekspordi loomine mart-tabelitest?
 - Lisada automaatne teavitus, kui DAG või dbt testid ebaõnnestuvad.
+- Võtta kasutusele Fingrid Open Data API (Estlink kaablite tööolekuks) ja EU ETS CO₂ hinna API, et projekti mudelit edasi arendada ja analüüsi täpsustada
 
 
 ## Meeskond
