@@ -357,7 +357,7 @@ Näidikulaud:
 
 Näidikulaud on loodud Tableau Publicus. Dashboard kasutab dbt mart-kihi tabeleid.
 
-Tableau Publicu dashboardi link:
+Tableau Publicu dashboardide lingid:
 
 * [General Trends - korrelatsioon](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash3)
 * [Regional Comparison](https://public.tableau.com/app/profile/anniq.k/viz/kodut_dash_v1/dash2)
