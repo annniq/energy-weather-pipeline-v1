@@ -6,6 +6,8 @@
             'date_utc',
             'temperature_category',
             'wind_category',
+            'solar_category',  
+            'cloud_category',  
             'is_daylight_hour'
         ]
     )
@@ -16,11 +18,9 @@ with filtered_source as (
     from {{ ref('fct_energy_weather_hourly') }}
 
     {% if is_incremental() %}
-    -- Võtame alustabelist ainult need kuupäevad, mida sihttabelis veel ei eksisteeri
-    where date_utc not in (
-        select distinct date_utc 
-        from {{ this }}
-    )
+    -- Võtame alustabelist andmed, mis on samal päeval või uuemad kui sihttabeli max kuupäev.
+    -- dbt asendab muutunud read automaatselt tänu unique_key-le.
+    where date_utc >= (select max(date_utc) from {{ this }})
     {% endif %}
 ),
 
@@ -30,8 +30,8 @@ condition_summary as (
         date_utc,
         temperature_category,
         wind_category,
-		solar_category,
-		cloud_category,
+        solar_category,
+        cloud_category,
         is_daylight_hour,
         count(*) as hourly_observation_count,
         avg(price_eur_mwh) as avg_price_eur_mwh,
@@ -45,8 +45,8 @@ condition_summary as (
         date_utc,
         temperature_category,
         wind_category,
-		solar_category,
-		cloud_category,
+        solar_category,
+        cloud_category,
         is_daylight_hour
 )
 
@@ -55,8 +55,8 @@ select
     date_utc,
     temperature_category,
     wind_category,
-	solar_category,
-	cloud_category,
+    solar_category,
+    cloud_category,
     is_daylight_hour,
     hourly_observation_count,
     avg_price_eur_mwh,
