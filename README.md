@@ -446,6 +446,6 @@ Tableau Publicu dashboardide lingid:
 | Nimi | Roll |
 |------|------|
 |  Krista Killo | Andmeallika ja Airflow sissevõtu omanik |
-| Andres Matsin / Annika Kaskma | dbt transformatsioonide omanik |
+| Andres Matsin | dbt transformatsioonide omanik |
 | Annika Kaskma | Andmekvaliteedi testide omanik |
 | Annika Kaskma /  Inga Staršinova | Näidikulaua ja dokumentatsiooni omanik |
